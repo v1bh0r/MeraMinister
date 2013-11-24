@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('MeraMinisterApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, Ministry) {
+    Ministry.states().then(function(found){
+      $scope.states = found;
+    })
   });

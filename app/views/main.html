@@ -1,9 +1,14 @@
 <div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
+  <h1>Mera Minister</h1>
+
+  <p>Your one stop minister comparison shop</p>
+  <input ng-model="searchText">
   <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+    <li ng-repeat="state in states|filter:searchText">
+      <div>
+        <span ng-bind="state.name"></span>
+        <span ng-bind="state.no_of_mps"></span>
+      </div>
+    </li>
   </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
 </div>
