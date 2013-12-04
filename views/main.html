@@ -1,0 +1,38 @@
+<div class="hero-unit">
+  <h1>Mera Minister</h1>
+
+  <p>Your one stop minister comparison shop</p>
+  <div ng-hide="news == null || news.length > 0">No news found</div>
+  <ul>
+    <li ng-repeat="newsItem in news">
+      <a ng-bind="newsItem.title" ng-href="{{newsItem.link}}" target="_blank"></a>
+    </li>
+  </ul>
+
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="span6">
+        <input ng-model="searchTextState">
+        <ul>
+          <li ng-repeat="state in states|filter:searchTextState">
+            <div ng-click="getMinisters(state.id)">
+              <span ng-bind="state.name"></span>
+              <span ng-bind="state.no_of_mps"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="span6">
+        <input ng-model="searchTextMinister">
+        <ul>
+          <li ng-repeat="minister in ministers|filter:searchTextMinister">
+            <div ng-click="loadNews(minister)">
+              <span ng-bind="minister.name"></span>
+              <span class="muted" ng-bind="minister.party.name"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
