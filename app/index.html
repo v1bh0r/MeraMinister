@@ -18,6 +18,12 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("feeds", "1");
+  </script>
+
 </head>
 <body ng-app="MeraMinisterApp">
 <!--[if lt IE 7]>
@@ -80,6 +86,9 @@
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/services/Ministry.js"></script>
 <script src="scripts/services/MyMinisterInfo.js"></script>
+<script src="scripts/services/JSONP.js"></script>
+<script src="scripts/services/GoogleFeeds.js"></script>
 <!-- endbuild -->
+
 </body>
 </html>

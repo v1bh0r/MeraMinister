@@ -2,6 +2,12 @@
   <h1>Mera Minister</h1>
 
   <p>Your one stop minister comparison shop</p>
+  <div ng-hide="news == null || news.length > 0">No news found</div>
+  <ul>
+    <li ng-repeat="newsItem in news">
+      <a ng-bind="newsItem.title" ng-href="{{newsItem.link}}" target="_blank"></a>
+    </li>
+  </ul>
 
   <div class="row-fluid">
     <div class="span12">
@@ -20,7 +26,7 @@
         <input ng-model="searchTextMinister">
         <ul>
           <li ng-repeat="minister in ministers|filter:searchTextMinister">
-            <div>
+            <div ng-click="loadNews(minister)">
               <span ng-bind="minister.name"></span>
               <span class="muted" ng-bind="minister.party.name"></span>
             </div>
